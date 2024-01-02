@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StatusBar } from "expo-status-bar";
+import { View } from "react-native";
+import * as Font from "expo-font";
+import { useEffect } from "react";
+import AppNavigator from "./src/navigation/AppNavigator";
+import { LogBox } from "react-native";
+LogBox.ignoreAllLogs();
+const loadFonts = async () => {
+  await Font.loadAsync({
+    "exo-regular": require("./src/assets/fonts/Exo-Regular.ttf"),
+    "exo-medium": require("./src/assets/fonts/Exo-Medium.ttf"),
+    "exo-bold": require("./src/assets/fonts/Exo-Bold.ttf"),
+  });
+};
 export default function App() {
+  useEffect(() => {
+    loadFonts();
+  }, []);
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <>
       <StatusBar style="auto" />
-    </View>
+      <AppNavigator />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
