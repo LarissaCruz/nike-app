@@ -12,7 +12,7 @@ import { ProgressBar } from "react-native-paper";
 
 export default function PreferencesScreen({ navigation }: LandingPageProps) {
   const goToLogin = () => {
-    navigation.navigate("Login"); // Navega para a tela de login
+    navigation.navigate("StepScreen01"); // Navega para a tela de login
   };
   return (
     <ImageBackground

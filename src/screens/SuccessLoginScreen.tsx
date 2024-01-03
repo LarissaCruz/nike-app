@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   },
   containerText: {
     flex: 1,
-    paddingHorizontal: 16,
+    paddingHorizontal: 25,
     backgroundColor: "#E25319",
     justifyContent: "center",
   },

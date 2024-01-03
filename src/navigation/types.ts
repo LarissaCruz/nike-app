@@ -6,6 +6,9 @@ export type RootStackParamList = {
     SignIn: undefined;
     SuccessLoginScreen: undefined;
     PreferencesScreen: undefined;
+    StepScreen01: undefined;
+    StepScreen02: undefined;
+    TabNavigator: undefined;
 };
 
 export type LandingPageNavigationProp = StackNavigationProp<RootStackParamList>;

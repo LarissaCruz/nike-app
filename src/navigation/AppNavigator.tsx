@@ -6,6 +6,9 @@ import SignInScreen from "../screens/SignInScreen";
 import LandingPage from "../screens/LandingPage";
 import SuccessLoginScreen from "../screens/SuccessLoginScreen";
 import PreferencesScreen from "../screens/PreferencesScreen";
+import StepScreen02 from "../screens/PreferencesStepScreen/StepScreen02";
+import StepScreen01 from "../screens/PreferencesStepScreen/StepScreen01";
+import TabNavigator from "./TabNavigation";
 
 const Stack = createStackNavigator();
 
@@ -36,6 +39,21 @@ const AppNavigator = () => {
         <Stack.Screen
           name="PreferencesScreen"
           component={PreferencesScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="StepScreen01"
+          component={StepScreen01}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="StepScreen02"
+          component={StepScreen02}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TabNavigator"
+          component={TabNavigator}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
