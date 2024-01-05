@@ -24,7 +24,7 @@ export default function TabNavigator() {
         tabBarInactiveTintColor: "#767676",
         tabBarLabelStyle: {
           paddingBottom: 12,
-          fontSize: 14,
+          fontSize: 10,
           fontFamily: "exo-regular",
         },
       }}

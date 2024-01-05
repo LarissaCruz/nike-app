@@ -19,7 +19,7 @@ export default function LandingPage({ navigation }: LandingPageProps) {
   };
   return (
     <ImageBackground
-      source={require("../assets/images/fundo-sign-up.png")}
+      source={require("../assets/images/fundo-sign-up.gif")}
       style={styles.backgroundImage}
     >
       <View style={styles.container}>

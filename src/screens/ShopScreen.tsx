@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { LandingPageProps } from "../navigation/types";
+import TabViewNavigation from "../navigation/TabViewNavigation";
 
 interface Item {
   id: string;
@@ -30,7 +31,7 @@ const ShopScreen: React.FC<LandingPageProps> = ({ navigation }) => {
     },
     {
       id: "2",
-      image: require("../assets/images/image03.png"),
+      image: require("../assets/images/image5.png"),
       text: "Featured in Nike Air",
     },
   ];
@@ -47,6 +48,10 @@ const ShopScreen: React.FC<LandingPageProps> = ({ navigation }) => {
       <View style={styles.header}>
         <Text style={styles.title}>Shop</Text>
       </View>
+      <TabViewNavigation></TabViewNavigation>
+
+      <Text style={styles.subtitle}>Must-Haves, Best Sellers & More</Text>
+
       <View style={styles.container}>
         <FlatList
           data={data}
@@ -57,14 +62,23 @@ const ShopScreen: React.FC<LandingPageProps> = ({ navigation }) => {
           contentContainerStyle={styles.flatListContainer}
         />
       </View>
+
       <ImageBackground
         source={require("../assets/images/image02.png")}
         style={styles.backgroundImage}
-      ></ImageBackground>
+      >
+        <Text style={[styles.subtitle, { color: "#fff", marginBottom: 0 }]}>
+          New & Featured
+        </Text>
+      </ImageBackground>
       <ImageBackground
         source={require("../assets/images/banner1.png")}
-        style={styles.backgroundImage}
-      ></ImageBackground>
+        style={[styles.backgroundImage]}
+      >
+        <Text style={[styles.subtitle, { color: "#fff", marginBottom: 0 }]}>
+          New & Featured
+        </Text>
+      </ImageBackground>
     </ScrollView>
   );
 };
@@ -75,8 +89,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   header: {
-    paddingTop: 5,
-    paddingBottom: 20,
+    paddingBottom: 15,
     paddingHorizontal: 24,
   },
   title: {
@@ -89,7 +102,8 @@ const styles = StyleSheet.create({
     paddingBottom: 24,
   },
   subtitle: {
-    marginBottom: 20,
+    marginLeft: 24,
+    marginBottom: 28,
     fontFamily: "exo-medium",
     fontSize: 20,
     color: "#000",
@@ -101,7 +115,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   flatListContainer: {
-    alignItems: "center", // Alinha os itens horizontalmente
+    gap: 10,
+    marginBottom: 20,
   },
   itemContainer: {
     // Espaçamento entre os itens
@@ -121,6 +136,7 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
     marginBottom: 5,
     height: 110,
+    justifyContent: "center",
   },
 });
 
